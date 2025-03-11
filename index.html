@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <!-- font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <header class="bg-gray-100">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="md:flex md:items-center md:gap-12">
+              <a class="block text-teal-600" href="#">
+                <span class="sr-only">Home</span>
+                <img src="https://static.vecteezy.com/system/resources/previews/011/311/490/original/ol-o-l-letter-logo-design-initial-letter-ol-linked-circle-uppercase-monogram-logo-red-and-blue-ol-logo-o-l-design-ol-o-l-vector.jpg" style="width: 65px; height: 65px; border-radius: 50%;">
+              </a>
+            </div>
+      
+            <!-- <div class="hidden md:block">
+              <nav aria-label="Global">
+                <ul class="flex items-center gap-6 text-sm">
+                  <li>
+                    <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> About </a>
+                  </li>
+      
+                  <li>
+                    <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Library </a>
+                  </li>
+                </ul>
+              </nav>
+            </div> -->
+      
+            <div class="flex items-center gap-4">
+              <div class="block md:hidden">
+                <button
+                  class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    <div class="max-w-5xl mx-auto text-center">
+        <h1 class="text-5xl font-bold p-5" style="font-family: Barriecito, system-ui; color: red;">O<span style="color: green;">ne</span>L<span style="color: green;">ibrary</span></h1>
+        <input type="text" id="search" placeholder="Cari e-book..." class="p-2 border rounded w-1/2" onkeyup="searchBooks()">
+        <div id="bookList" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6 p-5">
+            <!-- E-Book List -->
+        </div>
+    </div>
+    
+    <script>
+        const books = [
+          // e-book lain
+            { title: "15 Bentuk Kekerasan Seksual", author: "Author 1", link: "e-book lain/15 BTK KEKERASAN SEKSUAL.pdf", preview: "https://lh4.googleusercontent.com/4694Phk5rYvBIBb63lqgTlT0E7utW8F9n4plwTrOvu2GOQL-nMwcelqX_qF_oRiiFDg=w1200-h630-p" },
+            { title: "Aku Berpikir Maka Aku Tertawa", author: "Author 2", link: "e-book lain/AkuBerpikirMakaAkuTertawahalfklingon.pdf", preview: "https://down-id.img.susercontent.com/file/590cb5442a85671e07d106c24925990e" },
+            { title: "Orang-Orang Terbungkam", author: "Author 3", link: "e-book lain/AlbertCamus-Orang-OrangTerbungkam.pdf", preview: "https://cdn.slidesharecdn.com/ss_thumbnails/albertcamus-orang-orangterbungkam-170830012544-thumbnail.jpg?width=640&height=640&fit=bounds" },
+            { title: "Analisa Marx Atas Produksi Kapitalis", author: "Author 4", link: "e-book lain/Analisa Marx Atas Produksi Kapitalis - Gérard Duménil _ Duncan Foley.pdf", preview: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1582075816l/51473535.jpg" },
+            { title: "Analisis Gender dan Transformasi  Sosial", author: "Author 5", link: "e-book lain/Analisis Gender dan Transformasi  Sosial_Luh Anik.pdf", preview: "https://insistpress.com/wp-content/uploads/2020/10/AGTS_Sampul-RGB.jpg" },
+            { title: "Ateisme", author: "Author 1", link: "e-book lain/Ateisme.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Binder Filsafat Ilmu", author: "Author 2", link: "e-book/Binder Filsafat Ilmu.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Booklet Bergilir", author: "Author 3", link: "e-book lain/Booklet Bergilir - Final WEBVIEW.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Communist Manifest", author: "Author 4", link: "e-book lain/Communist manifest.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "MARXISME DAN EVOLUSI MANUSIA", author: "Author 5", link: "e-book lain/Dede-Mulyanto-MARXISME-DAN-EVOLUSI-MANUSIA.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Duham", author: "Author 1", link: "e-book lain/duham.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Dunia Sophie", author: "Author 2", link: "e-book lain/dunia_sophie.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Ini Bukan Revolusiku", author: "Author 1", link: "e-book lain/Emma Goldman - Ini Bukan Revolusiku.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Filsafat modern", author: "Author 2", link: "e-book lain/F. Budi-Filsafat modern.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Falsafat Una", author: "Author 3", link: "e-book lain/Falsafatuna.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Filsafat Perempuan dalam Islam", author: "Author 4", link: "e-book lain/Filsafat Perempuan dalam Islam.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Menemukan Kembali Liberalisme", author: "Author 5", link: "e-book lain/fins-menemukan-kembali-liberalisme-ebook.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Tentang Das Kapital Marx", author: "Author 1", link: "e-book lain/Frederic Engels - Tetang Das Kapital Marx.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Gender and Sexual Identity", author: "Author 2", link: "e-book lain/Gender and Sexual Identity - Transcending Feminist and Queer Theory (2014) {VTS}.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Ideologi Gender", author: "Author 3", link: "e-book lain/ideologi gender.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Novel Dunia Anna", author: "Author 4", link: "e-book lain/Jostein Gaarder - Novel Dunia Anna.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Kapitalisme dan Penindasan Perempuan", author: "Author 5", link: "e-book lain/Kapitalisme-dan-Penindasan-Perempuan.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Sejarah Tuhan", author: "Author 1", link: "e-book lain/Karen Amstrong - Sejarah Tuhan.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Manifesto Partai Komunis", author: "Author 2", link: "e-book lain/Karl Marx and engels - manifesto partai komunis.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Kewajiban Negara", author: "Author 3", link: "e-book lain/kewajiban negara fix-1(2).pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Kisah Penjual Buku yang Tewas di Bagdad", author: "Author 4", link: "e-book lain/Kisah_Penjual_Buku_yang_Tewas_di_Bagdad.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Kemiskinan Filsafat", author: "Author 5", link: "e-book lain/MARK KEMISKINAN FILSAFAT.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Masa Depan Tuhan", author: "Author 1", link: "e-book lain/MASA DEPAN TUHAN.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "MEIN KAMPF", author: "Author 2", link: "e-book lain/MASA DEPAN TUHAN.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Menalar Tuhan", author: "Author 3", link: "e-book lain/Menalar Tuhan.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Menghalau Ekstremisme Kekerasan", author: "Author 4", link: "e-book lain/Menghalau Ekstremisme Kekerasan.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Sejarah Tuhan (Golden Edition)", author: "Author 5", link: "e-book lain/Sejarah Tuhan.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "SEX GENDER DAN REPRODUKSI KEKUASAAN", author: "Author 1", link: "e-book lain/SEX GENDER DAN REPRODUKSI KEKUASAAN.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Tahafut Al-Falasifah", author: "Author 2", link: "e-book lain/Tahafut Al-Falasifah.pdf", preview: "https://via.placeholder.com/150" },
+            { title: "Eaterialisme dan Empiriokritisme", author: "Author 3", link: "e-book lain/v.i. lenin - materialisme dan empiriokritisme.pdf", preview: "https://via.placeholder.com/150" },
+            // e-books club
+            { title: "E-Book 4", author: "Author 4", link: "#", preview: "https://via.placeholder.com/150" },
+            { title: "E-Book 5", author: "Author 5", link: "#", preview: "https://via.placeholder.com/150" },
+            { title: "E-Book 1", author: "Author 1", link: "#", preview: "https://via.placeholder.com/150" },
+            { title: "E-Book 2", author: "Author 2", link: "#", preview: "https://via.placeholder.com/150" },
+            { title: "E-Book 3", author: "Author 3", link: "#", preview: "https://via.placeholder.com/150" },
+            { title: "E-Book 4", author: "Author 4", link: "#", preview: "https://via.placeholder.com/150" },
+            { title: "E-Book 5", author: "Author 5", link: "#", preview: "https://via.placeholder.com/150" },
+            // Tambahkan hingga 50 e-book
+        ];
+
+        function displayBooks(filteredBooks) {
+            const bookList = document.getElementById("bookList");
+            bookList.innerHTML = "";
+            
+            if (filteredBooks.length === 0) {
+                bookList.innerHTML = '<p class="text-gray-500">Tidak ada e-book yang ditemukan.</p>';
+                return;
+            }
+
+            filteredBooks.forEach(book => {
+                const bookCard = document.createElement("div");
+                bookCard.className = "p-4 bg-white rounded-lg shadow flex flex-col items-center text-center";
+                bookCard.innerHTML = `
+                    <img src="${book.preview}" alt="${book.title}" class="w-32 h-40 object-cover mb-2 rounded">
+                    <h2 class="text-lg font-semibold">${book.title}</h2>
+                    <p class="text-gray-500 text-sm">${book.author}</p>
+                    <a href="${book.link}" class="text-blue-500 hover:underline mt-2">Baca e-book</a>
+                `;
+                bookList.appendChild(bookCard);
+            });
+        }
+
+        function searchBooks() {
+            const query = document.getElementById("search").value.toLowerCase();
+            const filteredBooks = books.filter(book => book.title.toLowerCase().includes(query));
+            displayBooks(filteredBooks);
+        }
+
+        // Tampilkan semua buku saat pertama kali dimuat
+        displayBooks(books);
+
+        
+
+    </script>
+</body>
+</html>
