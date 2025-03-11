@@ -10,54 +10,10 @@
     <!-- font -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8">
-    <header class="bg-gray-100">
-        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          <div class="flex h-16 items-center justify-between">
-            <div class="md:flex md:items-center md:gap-12">
-              <a class="block text-teal-600" href="#">
-                <span class="sr-only">Home</span>
-                <img src="https://static.vecteezy.com/system/resources/previews/011/311/490/original/ol-o-l-letter-logo-design-initial-letter-ol-linked-circle-uppercase-monogram-logo-red-and-blue-ol-logo-o-l-design-ol-o-l-vector.jpg" style="width: 65px; height: 65px; border-radius: 50%;">
-              </a>
-            </div>
-      
-            <!-- <div class="hidden md:block">
-              <nav aria-label="Global">
-                <ul class="flex items-center gap-6 text-sm">
-                  <li>
-                    <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> About </a>
-                  </li>
-      
-                  <li>
-                    <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Library </a>
-                  </li>
-                </ul>
-              </nav>
-            </div> -->
-      
-            <div class="flex items-center gap-4">
-              <div class="block md:hidden">
-                <button
-                  class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="size-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+<body class="bg-blue-100 p-8">
     <div class="max-w-5xl mx-auto text-center">
-        <h1 class="text-5xl font-bold p-5" style="font-family: Barriecito, system-ui; color: red;">O<span style="color: green;">ne</span>L<span style="color: green;">ibrary</span></h1>
+        <h1 class="text-5xl font-bold p-4" style="font-family: Barriecito, system-ui; color: red;">O<span style="color: green;">ne</span>L<span style="color: green;">ibrary</span></h1>
+        <h4 class="p-4 font-bold italic">"Jelajahi dunia pengetahuan tanpa batas dengan koleksi 100+ e-book pilihan kami! Temukan beragam bacaan dari berbagai kategori, siap diakses kapan saja dan di mana saja."</h4>
         <input type="text" id="search" placeholder="Cari e-book..." class="p-2 border rounded w-1/2" onkeyup="searchBooks()">
         <div id="bookList" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6 p-5">
             <!-- E-Book List -->
@@ -72,13 +28,13 @@
             { title: "Orang-Orang Terbungkam", author: "Author 3", link: "https://drive.google.com/file/d/1tECO0Xg5YCI4TkaCLjvJWSfBjOkzLDUF/view?usp=drive_link", preview: "https://cdn.slidesharecdn.com/ss_thumbnails/albertcamus-orang-orangterbungkam-170830012544-thumbnail.jpg?width=640&height=640&fit=bounds" },
             { title: "Analisa Marx Atas Produksi Kapitalis", author: "Author 4", link: "https://drive.google.com/file/d/1tD0VpxQRelAWyCqocIiGHYJK609ZFofj/view?usp=drive_link", preview: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1582075816l/51473535.jpg" },
             { title: "Analisis Gender dan Transformasi  Sosial", author: "Author 5", link: "https://drive.google.com/file/d/1szkZjLdRFKhTD3f6MRufFx9jJkntRJIh/view?usp=drive_link", preview: "https://insistpress.com/wp-content/uploads/2020/10/AGTS_Sampul-RGB.jpg" },
-            { title: "Ateisme", author: "Author 1", link: "https://drive.google.com/file/d/1srNBi-uh7_myIVcfl6EIP3Hr0Uw4pxr3/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
-            { title: "Binder Filsafat Ilmu", author: "Author 2", link: "https://drive.google.com/file/d/1sptKhcYRNHbVA1SKRZAgFPfokjpB75W2/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
-            { title: "Booklet Bergilir", author: "Author 3", link: "https://drive.google.com/file/d/1smewDMiD96hTwC-Ugz07IpU2Npfvr9r4/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
-            { title: "Communist Manifest", author: "Author 4", link: "https://drive.google.com/file/d/1skGDr1O5TNEhciIBI5hrnrLuLUtvyCu1/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
-            { title: "MARXISME DAN EVOLUSI MANUSIA", author: "Author 5", link: "https://drive.google.com/file/d/1skA_Qp-E9io5J8NTY3p3qGndJVLevcuT/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
-            { title: "Duham", author: "Author 1", link: "https://drive.google.com/file/d/1sjv2kxNPnY-kxesg6OzXczCB6g4jPOE9/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
-            { title: "Dunia Sophie", author: "Author 2", link: "https://drive.google.com/file/d/1sfZG5INnLBZyJo6KbMCg_P9S1PoxabBD/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
+            { title: "Ateisme", author: "Author 1", link: "https://drive.google.com/file/d/1srNBi-uh7_myIVcfl6EIP3Hr0Uw4pxr3/view?usp=drive_link", preview: "https://media.istockphoto.com/id/1273886443/id/vektor/konsep-kata-ateisme.jpg?s=612x612&w=is&k=20&c=FBZgQjRQ_-ZDYfBNdTYd3Frj3Duq8c2FS-YD3EIcEG0=" },
+            { title: "Binder Filsafat Ilmu", author: "Author 2", link: "https://drive.google.com/file/d/1sptKhcYRNHbVA1SKRZAgFPfokjpB75W2/view?usp=drive_link", preview: "https://hermananis.com/wp-content/uploads/2023/02/1-5.jpg" },
+            { title: "Booklet Bergilir", author: "Author 3", link: "https://drive.google.com/file/d/1smewDMiD96hTwC-Ugz07IpU2Npfvr9r4/view?usp=drive_link", preview: "https://imgv2-2-f.scribdassets.com/img/document/399996299/original/b099fc6b54/1686852125?v=1" },
+            { title: "Communist Manifest", author: "Author 4", link: "https://drive.google.com/file/d/1skGDr1O5TNEhciIBI5hrnrLuLUtvyCu1/view?usp=drive_link", preview: "https://tse2.mm.bing.net/th?id=OIP.fttGgePOA-ue8UEG5RxVdgHaKl&pid=Api&P=0&h=220" },
+            { title: "MARXISME DAN EVOLUSI MANUSIA", author: "Author 5", link: "https://drive.google.com/file/d/1skA_Qp-E9io5J8NTY3p3qGndJVLevcuT/view?usp=drive_link", preview: "https://cdn.slidesharecdn.com/ss_thumbnails/dede-mulyanto-marxisme-dan-evolusi-manusia-170831035935-thumbnail.jpg?width=640&height=640&fit=bounds" },
+            { title: "Duham", author: "Author 1", link: "https://drive.google.com/file/d/1sjv2kxNPnY-kxesg6OzXczCB6g4jPOE9/view?usp=drive_link", preview: "https://imgv2-2-f.scribdassets.com/img/document/538102654/original/2ccb23d120/1677653430?v=1" },
+            { title: "Dunia Sophie", author: "Author 2", link: "https://drive.google.com/file/d/1sfZG5INnLBZyJo6KbMCg_P9S1PoxabBD/view?usp=drive_link", preview: "https://cdn.gramedia.com/uploads/items/9786024410209_dunia-sophie-republish.jpg" },
             { title: "Ini Bukan Revolusiku", author: "Author 1", link: "https://drive.google.com/file/d/1sXJ1eeKHO6gtCpTMWqHs5iGwNFOigTJ6/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
             { title: "Filsafat modern", author: "Author 2", link: "https://drive.google.com/file/d/1sXDcfdxDw28XMSxZByAgxaQ0XJMKx0qW/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
             { title: "Falsafat Una", author: "Author 3", link: "https://drive.google.com/file/d/1sW2HyZEzw8U2zr9MdvCjJgq63_JQJW2w/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
@@ -102,14 +58,15 @@
             { title: "SEX GENDER DAN REPRODUKSI KEKUASAAN", author: "Author 1", link: "https://drive.google.com/file/d/1rJlAwmAry4--S68PEHoD_R3QHFui8Rgt/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
             { title: "Tahafut Al-Falasifah", author: "Author 2", link: "https://drive.google.com/file/d/1rFRxK8QeQO2SVggK3ntO99IedndxMcbq/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
             { title: "Eaterialisme dan Empiriokritisme", author: "Author 3", link: "https://drive.google.com/file/d/1r3rRJigkiWa51wdxy2oZvuUxX2dFqYdF/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
-            // e-books club
-            // { title: "E-Book 4", author: "Author 4", link: "#", preview: "https://via.placeholder.com/150" },
-            // { title: "E-Book 5", author: "Author 5", link: "#", preview: "https://via.placeholder.com/150" },
-            // { title: "E-Book 1", author: "Author 1", link: "#", preview: "https://via.placeholder.com/150" },
-            // { title: "E-Book 2", author: "Author 2", link: "#", preview: "https://via.placeholder.com/150" },
-            // { title: "E-Book 3", author: "Author 3", link: "#", preview: "https://via.placeholder.com/150" },
-            // { title: "E-Book 4", author: "Author 4", link: "#", preview: "https://via.placeholder.com/150" },
-            // { title: "E-Book 5", author: "Author 5", link: "#", preview: "https://via.placeholder.com/150" },
+            // engels
+            { title: "Anti Duhring", author: "Author 4", link: "https://drive.google.com/file/d/1tsyWkLTWTyRz72okvu7xLnULQ0DT7aeo/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
+            { title: "Socialism Utopian and Scientific", author: "Author 5", link: "https://drive.google.com/file/d/1uTRSVAOxH4Wal6tfb9gneQl8fh2NeEl6/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
+            { title: "Synopsis of Capital", author: "Author 1", link: "https://drive.google.com/file/d/1uTLEpujRxIbufZtBb84ce3B5M1h3cWL0/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
+            { title: "The Death of Karl Marx", author: "Author 2", link: "https://drive.google.com/file/d/1uT3PzrHq_y86-npALweJVKL68TPbZCkH/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
+            { title: "The Origin of the Family, PPATS", author: "Author 3", link: "https://drive.google.com/file/d/1uQTir8Rcc9aGbVhKntCPv75SkgBljPGS/view?usp=drive_link", preview: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1658682961i/61679066.jpg" },
+            { title: "Dialectics of Nature", author: "Author 4", link: "https://drive.google.com/file/d/1uGuVoUykU6DI8v4F2aTPSw0v1SVLoFCP/view?usp=drive_link", preview: "https://m.media-amazon.com/images/I/71SOcW9vfqL._SL1500_.jpg" },
+            { title: "Condition of the Working Class in England", author: "Author 5", link: "https://drive.google.com/file/d/1u3LzYp3ikbQnnT3c2Edbs-Z4VfFuFQOW/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
+            { title: "The Peasant Question in France and Germany", author: "Author 5", link: "https://drive.google.com/file/d/1tyNs_pJrfD9g2EmPoOSjrHirpEJq148_/view?usp=drive_link", preview: "https://via.placeholder.com/150" },
             // Tambahkan hingga 50 e-book
         ];
 
@@ -128,8 +85,8 @@
                 bookCard.innerHTML = `
                     <img src="${book.preview}" alt="${book.title}" class="w-32 h-40 object-cover mb-2 rounded">
                     <h2 class="text-lg font-semibold">${book.title}</h2>
-                    <p class="text-gray-500 text-sm">${book.author}</p>
-                    <a href="${book.link}" class="text-blue-500 hover:underline mt-2">Baca e-book</a>
+                    <p class="text-white-500 text-sm">${book.author}</p>
+                    <a href="${book.link}" class="text-blue-500 mt-2">Baca e-book</a>
                 `;
                 bookList.appendChild(bookCard);
             });
